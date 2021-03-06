@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -50,14 +51,14 @@ namespace Testando.Crud
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            if (radioBtnPessoa.Checked == true)
-            {
-                MessageBox.Show("Pessoa selecionada");
-            }
-            else if (radioBtnCarro.Checked == true)
-            {
-                MessageBox.Show("Carro selecionado");
-            }
+
+            
+            
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

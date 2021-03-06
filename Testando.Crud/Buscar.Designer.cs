@@ -37,6 +37,7 @@
             this.btnBuscar = new System.Windows.Forms.Button();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblModelo = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // radioBtnPessoa
@@ -65,7 +66,7 @@
             // 
             // maskBuscarCpf
             // 
-            this.maskBuscarCpf.Location = new System.Drawing.Point(160, 76);
+            this.maskBuscarCpf.Location = new System.Drawing.Point(129, 76);
             this.maskBuscarCpf.Mask = "000.000.000-00";
             this.maskBuscarCpf.Name = "maskBuscarCpf";
             this.maskBuscarCpf.Size = new System.Drawing.Size(85, 20);
@@ -74,7 +75,7 @@
             // lblBuscarCpf
             // 
             this.lblBuscarCpf.AutoSize = true;
-            this.lblBuscarCpf.Location = new System.Drawing.Point(101, 79);
+            this.lblBuscarCpf.Location = new System.Drawing.Point(70, 79);
             this.lblBuscarCpf.Name = "lblBuscarCpf";
             this.lblBuscarCpf.Size = new System.Drawing.Size(27, 13);
             this.lblBuscarCpf.TabIndex = 5;
@@ -82,7 +83,7 @@
             // 
             // maskBuscarRenavam
             // 
-            this.maskBuscarRenavam.Location = new System.Drawing.Point(174, 76);
+            this.maskBuscarRenavam.Location = new System.Drawing.Point(143, 76);
             this.maskBuscarRenavam.Mask = "00000000-0";
             this.maskBuscarRenavam.Name = "maskBuscarRenavam";
             this.maskBuscarRenavam.Size = new System.Drawing.Size(71, 20);
@@ -91,7 +92,7 @@
             // lblBuscarRenavam
             // 
             this.lblBuscarRenavam.AutoSize = true;
-            this.lblBuscarRenavam.Location = new System.Drawing.Point(101, 79);
+            this.lblBuscarRenavam.Location = new System.Drawing.Point(70, 79);
             this.lblBuscarRenavam.Name = "lblBuscarRenavam";
             this.lblBuscarRenavam.Size = new System.Drawing.Size(53, 13);
             this.lblBuscarRenavam.TabIndex = 4;
@@ -99,7 +100,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(151, 124);
+            this.btnBuscar.Location = new System.Drawing.Point(236, 74);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 7;
@@ -127,11 +128,22 @@
             this.lblModelo.TabIndex = 9;
             this.lblModelo.Text = "Modelo:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(207, 268);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // Buscar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 312);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblModelo);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.btnBuscar);
@@ -159,5 +171,6 @@
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblModelo;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

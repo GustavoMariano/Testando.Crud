@@ -36,20 +36,21 @@
             this.lblModelo = new System.Windows.Forms.Label();
             this.lblRenavam = new System.Windows.Forms.Label();
             this.gBoxPessoa = new System.Windows.Forms.GroupBox();
-            this.gBoxCarro = new System.Windows.Forms.GroupBox();
-            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.maskCpfPessoa = new System.Windows.Forms.MaskedTextBox();
+            this.gBoxPossuiCarroPessoa = new System.Windows.Forms.GroupBox();
+            this.maskPessoaCarroRenavam = new System.Windows.Forms.MaskedTextBox();
+            this.lblIdCarroPessoa = new System.Windows.Forms.Label();
+            this.lblPossuiCarro = new System.Windows.Forms.Label();
             this.radioBtnCarroSim = new System.Windows.Forms.RadioButton();
             this.radioBtnCarroNao = new System.Windows.Forms.RadioButton();
-            this.lblPossuiCarro = new System.Windows.Forms.Label();
-            this.lblIdCarroPessoa = new System.Windows.Forms.Label();
-            this.gBoxPossuiCarroPessoa = new System.Windows.Forms.GroupBox();
-            this.btnSalvar = new System.Windows.Forms.Button();
-            this.maskCpfPessoa = new System.Windows.Forms.MaskedTextBox();
+            this.gBoxCarro = new System.Windows.Forms.GroupBox();
             this.maskRenavamCarro = new System.Windows.Forms.MaskedTextBox();
-            this.maskPessoaCarroRenavam = new System.Windows.Forms.MaskedTextBox();
+            this.txtModelo = new System.Windows.Forms.TextBox();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gBoxPessoa.SuspendLayout();
-            this.gBoxCarro.SuspendLayout();
             this.gBoxPossuiCarroPessoa.SuspendLayout();
+            this.gBoxCarro.SuspendLayout();
             this.SuspendLayout();
             // 
             // radioBtnPessoa
@@ -136,25 +137,50 @@
             this.gBoxPessoa.TabStop = false;
             this.gBoxPessoa.Text = "Pessoa";
             // 
-            // gBoxCarro
+            // maskCpfPessoa
             // 
-            this.gBoxCarro.Controls.Add(this.maskRenavamCarro);
-            this.gBoxCarro.Controls.Add(this.txtModelo);
-            this.gBoxCarro.Controls.Add(this.lblRenavam);
-            this.gBoxCarro.Controls.Add(this.lblModelo);
-            this.gBoxCarro.Location = new System.Drawing.Point(12, 62);
-            this.gBoxCarro.Name = "gBoxCarro";
-            this.gBoxCarro.Size = new System.Drawing.Size(351, 96);
-            this.gBoxCarro.TabIndex = 10;
-            this.gBoxCarro.TabStop = false;
-            this.gBoxCarro.Text = "Carro";
+            this.maskCpfPessoa.Location = new System.Drawing.Point(63, 53);
+            this.maskCpfPessoa.Mask = "000.000.000-00";
+            this.maskCpfPessoa.Name = "maskCpfPessoa";
+            this.maskCpfPessoa.Size = new System.Drawing.Size(84, 20);
+            this.maskCpfPessoa.TabIndex = 9;
             // 
-            // txtModelo
+            // gBoxPossuiCarroPessoa
             // 
-            this.txtModelo.Location = new System.Drawing.Point(63, 25);
-            this.txtModelo.Name = "txtModelo";
-            this.txtModelo.Size = new System.Drawing.Size(264, 20);
-            this.txtModelo.TabIndex = 11;
+            this.gBoxPossuiCarroPessoa.Controls.Add(this.maskPessoaCarroRenavam);
+            this.gBoxPossuiCarroPessoa.Controls.Add(this.lblIdCarroPessoa);
+            this.gBoxPossuiCarroPessoa.Location = new System.Drawing.Point(9, 125);
+            this.gBoxPossuiCarroPessoa.Name = "gBoxPossuiCarroPessoa";
+            this.gBoxPossuiCarroPessoa.Size = new System.Drawing.Size(325, 66);
+            this.gBoxPossuiCarroPessoa.TabIndex = 8;
+            this.gBoxPossuiCarroPessoa.TabStop = false;
+            this.gBoxPossuiCarroPessoa.Text = "Carro";
+            // 
+            // maskPessoaCarroRenavam
+            // 
+            this.maskPessoaCarroRenavam.Location = new System.Drawing.Point(147, 27);
+            this.maskPessoaCarroRenavam.Mask = "0000000-0";
+            this.maskPessoaCarroRenavam.Name = "maskPessoaCarroRenavam";
+            this.maskPessoaCarroRenavam.Size = new System.Drawing.Size(67, 20);
+            this.maskPessoaCarroRenavam.TabIndex = 13;
+            // 
+            // lblIdCarroPessoa
+            // 
+            this.lblIdCarroPessoa.AutoSize = true;
+            this.lblIdCarroPessoa.Location = new System.Drawing.Point(73, 30);
+            this.lblIdCarroPessoa.Name = "lblIdCarroPessoa";
+            this.lblIdCarroPessoa.Size = new System.Drawing.Size(53, 13);
+            this.lblIdCarroPessoa.TabIndex = 7;
+            this.lblIdCarroPessoa.Text = "Renavam";
+            // 
+            // lblPossuiCarro
+            // 
+            this.lblPossuiCarro.AutoSize = true;
+            this.lblPossuiCarro.Location = new System.Drawing.Point(6, 106);
+            this.lblPossuiCarro.Name = "lblPossuiCarro";
+            this.lblPossuiCarro.Size = new System.Drawing.Size(72, 13);
+            this.lblPossuiCarro.TabIndex = 6;
+            this.lblPossuiCarro.Text = "Possui Carro?";
             // 
             // radioBtnCarroSim
             // 
@@ -180,34 +206,33 @@
             this.radioBtnCarroNao.UseVisualStyleBackColor = true;
             this.radioBtnCarroNao.CheckedChanged += new System.EventHandler(this.radioButtonCarroNao_CheckedChanged);
             // 
-            // lblPossuiCarro
+            // gBoxCarro
             // 
-            this.lblPossuiCarro.AutoSize = true;
-            this.lblPossuiCarro.Location = new System.Drawing.Point(6, 106);
-            this.lblPossuiCarro.Name = "lblPossuiCarro";
-            this.lblPossuiCarro.Size = new System.Drawing.Size(72, 13);
-            this.lblPossuiCarro.TabIndex = 6;
-            this.lblPossuiCarro.Text = "Possui Carro?";
+            this.gBoxCarro.Controls.Add(this.maskRenavamCarro);
+            this.gBoxCarro.Controls.Add(this.txtModelo);
+            this.gBoxCarro.Controls.Add(this.lblRenavam);
+            this.gBoxCarro.Controls.Add(this.lblModelo);
+            this.gBoxCarro.Location = new System.Drawing.Point(12, 62);
+            this.gBoxCarro.Name = "gBoxCarro";
+            this.gBoxCarro.Size = new System.Drawing.Size(351, 96);
+            this.gBoxCarro.TabIndex = 10;
+            this.gBoxCarro.TabStop = false;
+            this.gBoxCarro.Text = "Carro";
             // 
-            // lblIdCarroPessoa
+            // maskRenavamCarro
             // 
-            this.lblIdCarroPessoa.AutoSize = true;
-            this.lblIdCarroPessoa.Location = new System.Drawing.Point(73, 30);
-            this.lblIdCarroPessoa.Name = "lblIdCarroPessoa";
-            this.lblIdCarroPessoa.Size = new System.Drawing.Size(53, 13);
-            this.lblIdCarroPessoa.TabIndex = 7;
-            this.lblIdCarroPessoa.Text = "Renavam";
+            this.maskRenavamCarro.Location = new System.Drawing.Point(63, 55);
+            this.maskRenavamCarro.Mask = "0000000-0";
+            this.maskRenavamCarro.Name = "maskRenavamCarro";
+            this.maskRenavamCarro.Size = new System.Drawing.Size(67, 20);
+            this.maskRenavamCarro.TabIndex = 12;
             // 
-            // gBoxPossuiCarroPessoa
+            // txtModelo
             // 
-            this.gBoxPossuiCarroPessoa.Controls.Add(this.maskPessoaCarroRenavam);
-            this.gBoxPossuiCarroPessoa.Controls.Add(this.lblIdCarroPessoa);
-            this.gBoxPossuiCarroPessoa.Location = new System.Drawing.Point(9, 125);
-            this.gBoxPossuiCarroPessoa.Name = "gBoxPossuiCarroPessoa";
-            this.gBoxPossuiCarroPessoa.Size = new System.Drawing.Size(325, 66);
-            this.gBoxPossuiCarroPessoa.TabIndex = 8;
-            this.gBoxPossuiCarroPessoa.TabStop = false;
-            this.gBoxPossuiCarroPessoa.Text = "Carro";
+            this.txtModelo.Location = new System.Drawing.Point(63, 25);
+            this.txtModelo.Name = "txtModelo";
+            this.txtModelo.Size = new System.Drawing.Size(264, 20);
+            this.txtModelo.TabIndex = 11;
             // 
             // btnSalvar
             // 
@@ -219,35 +244,22 @@
             this.btnSalvar.UseVisualStyleBackColor = true;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // maskCpfPessoa
+            // btnCancelar
             // 
-            this.maskCpfPessoa.Location = new System.Drawing.Point(63, 53);
-            this.maskCpfPessoa.Mask = "000.000.000-00";
-            this.maskCpfPessoa.Name = "maskCpfPessoa";
-            this.maskCpfPessoa.Size = new System.Drawing.Size(84, 20);
-            this.maskCpfPessoa.TabIndex = 9;
-            // 
-            // maskRenavamCarro
-            // 
-            this.maskRenavamCarro.Location = new System.Drawing.Point(63, 55);
-            this.maskRenavamCarro.Mask = "00000000-0";
-            this.maskRenavamCarro.Name = "maskRenavamCarro";
-            this.maskRenavamCarro.Size = new System.Drawing.Size(67, 20);
-            this.maskRenavamCarro.TabIndex = 12;
-            // 
-            // maskPessoaCarroRenavam
-            // 
-            this.maskPessoaCarroRenavam.Location = new System.Drawing.Point(147, 27);
-            this.maskPessoaCarroRenavam.Mask = "00000000-0";
-            this.maskPessoaCarroRenavam.Name = "maskPessoaCarroRenavam";
-            this.maskPessoaCarroRenavam.Size = new System.Drawing.Size(67, 20);
-            this.maskPessoaCarroRenavam.TabIndex = 13;
+            this.btnCancelar.Location = new System.Drawing.Point(207, 268);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 12;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // Adicionar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 312);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.gBoxCarro);
             this.Controls.Add(this.gBoxPessoa);
@@ -257,10 +269,10 @@
             this.Text = "Adicionar";
             this.gBoxPessoa.ResumeLayout(false);
             this.gBoxPessoa.PerformLayout();
-            this.gBoxCarro.ResumeLayout(false);
-            this.gBoxCarro.PerformLayout();
             this.gBoxPossuiCarroPessoa.ResumeLayout(false);
             this.gBoxPossuiCarroPessoa.PerformLayout();
+            this.gBoxCarro.ResumeLayout(false);
+            this.gBoxCarro.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,5 +299,6 @@
         private System.Windows.Forms.MaskedTextBox maskCpfPessoa;
         private System.Windows.Forms.MaskedTextBox maskRenavamCarro;
         private System.Windows.Forms.MaskedTextBox maskPessoaCarroRenavam;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

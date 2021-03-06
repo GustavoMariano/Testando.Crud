@@ -58,6 +58,7 @@
     <Compile Include="Buscar.Designer.cs">
       <DependentUpon>Buscar.cs</DependentUpon>
     </Compile>
+    <Compile Include="Db.cs" />
     <Compile Include="Editar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +71,8 @@
     <Compile Include="Excluir.Designer.cs">
       <DependentUpon>Excluir.cs</DependentUpon>
     </Compile>
+    <Compile Include="Carro.cs" />
+    <Compile Include="Pessoa.cs" />
     <Compile Include="TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>

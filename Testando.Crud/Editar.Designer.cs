@@ -35,23 +35,24 @@
             this.lblBuscarCpf = new System.Windows.Forms.Label();
             this.maskBuscarCpf = new System.Windows.Forms.MaskedTextBox();
             this.gBoxEditarPessoa = new System.Windows.Forms.GroupBox();
-            this.maskEditarPessoaCpf = new System.Windows.Forms.MaskedTextBox();
-            this.lblCpf = new System.Windows.Forms.Label();
-            this.lblNome = new System.Windows.Forms.Label();
-            this.txtEditarPessoaNome = new System.Windows.Forms.TextBox();
-            this.lblPossuiCarro = new System.Windows.Forms.Label();
-            this.radioPossuiCarroSim = new System.Windows.Forms.RadioButton();
-            this.radioPossuiCarroNao = new System.Windows.Forms.RadioButton();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.lblEditarPessoaRenavam = new System.Windows.Forms.Label();
-            this.maskEditarPessoaRenavam = new System.Windows.Forms.MaskedTextBox();
             this.btnSalvarPessoa = new System.Windows.Forms.Button();
+            this.maskEditarPessoaRenavam = new System.Windows.Forms.MaskedTextBox();
+            this.lblEditarPessoaRenavam = new System.Windows.Forms.Label();
+            this.radioPossuiCarroNao = new System.Windows.Forms.RadioButton();
+            this.radioPossuiCarroSim = new System.Windows.Forms.RadioButton();
+            this.lblPossuiCarro = new System.Windows.Forms.Label();
+            this.txtEditarPessoaNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.lblCpf = new System.Windows.Forms.Label();
+            this.maskEditarPessoaCpf = new System.Windows.Forms.MaskedTextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.gBoxEditarCarro = new System.Windows.Forms.GroupBox();
+            this.btnSalvarCarro = new System.Windows.Forms.Button();
+            this.txtEditarCarroModelo = new System.Windows.Forms.TextBox();
+            this.lblEditarCarroModelo = new System.Windows.Forms.Label();
             this.maskEditarCarroRenavam = new System.Windows.Forms.MaskedTextBox();
             this.lblEditarCarroRenavam = new System.Windows.Forms.Label();
-            this.lblEditarCarroModelo = new System.Windows.Forms.Label();
-            this.txtEditarCarroModelo = new System.Windows.Forms.TextBox();
-            this.btnSalvarCarro = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gBoxEditarPessoa.SuspendLayout();
             this.gBoxEditarCarro.SuspendLayout();
             this.SuspendLayout();
@@ -133,59 +134,31 @@
             this.gBoxEditarPessoa.TabStop = false;
             this.gBoxEditarPessoa.Text = "Pessoa";
             // 
-            // maskEditarPessoaCpf
+            // btnSalvarPessoa
             // 
-            this.maskEditarPessoaCpf.Location = new System.Drawing.Point(47, 23);
-            this.maskEditarPessoaCpf.Mask = "000.000.000-00";
-            this.maskEditarPessoaCpf.Name = "maskEditarPessoaCpf";
-            this.maskEditarPessoaCpf.Size = new System.Drawing.Size(85, 20);
-            this.maskEditarPessoaCpf.TabIndex = 10;
+            this.btnSalvarPessoa.Location = new System.Drawing.Point(173, 92);
+            this.btnSalvarPessoa.Name = "btnSalvarPessoa";
+            this.btnSalvarPessoa.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarPessoa.TabIndex = 19;
+            this.btnSalvarPessoa.Text = "Salvar";
+            this.btnSalvarPessoa.UseVisualStyleBackColor = true;
             // 
-            // lblCpf
+            // maskEditarPessoaRenavam
             // 
-            this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(6, 26);
-            this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(27, 13);
-            this.lblCpf.TabIndex = 11;
-            this.lblCpf.Text = "CPF";
+            this.maskEditarPessoaRenavam.Location = new System.Drawing.Point(279, 55);
+            this.maskEditarPessoaRenavam.Mask = "00000000-0";
+            this.maskEditarPessoaRenavam.Name = "maskEditarPessoaRenavam";
+            this.maskEditarPessoaRenavam.Size = new System.Drawing.Size(71, 20);
+            this.maskEditarPessoaRenavam.TabIndex = 18;
             // 
-            // lblNome
+            // lblEditarPessoaRenavam
             // 
-            this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(6, 58);
-            this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
-            this.lblNome.TabIndex = 12;
-            this.lblNome.Text = "Nome";
-            // 
-            // txtEditarPessoaNome
-            // 
-            this.txtEditarPessoaNome.Location = new System.Drawing.Point(47, 55);
-            this.txtEditarPessoaNome.Name = "txtEditarPessoaNome";
-            this.txtEditarPessoaNome.Size = new System.Drawing.Size(146, 20);
-            this.txtEditarPessoaNome.TabIndex = 13;
-            // 
-            // lblPossuiCarro
-            // 
-            this.lblPossuiCarro.AutoSize = true;
-            this.lblPossuiCarro.Location = new System.Drawing.Point(199, 26);
-            this.lblPossuiCarro.Name = "lblPossuiCarro";
-            this.lblPossuiCarro.Size = new System.Drawing.Size(65, 13);
-            this.lblPossuiCarro.TabIndex = 11;
-            this.lblPossuiCarro.Text = "Possui carro";
-            // 
-            // radioPossuiCarroSim
-            // 
-            this.radioPossuiCarroSim.AutoSize = true;
-            this.radioPossuiCarroSim.Location = new System.Drawing.Point(270, 24);
-            this.radioPossuiCarroSim.Name = "radioPossuiCarroSim";
-            this.radioPossuiCarroSim.Size = new System.Drawing.Size(42, 17);
-            this.radioPossuiCarroSim.TabIndex = 14;
-            this.radioPossuiCarroSim.TabStop = true;
-            this.radioPossuiCarroSim.Text = "Sim";
-            this.radioPossuiCarroSim.UseVisualStyleBackColor = true;
-            this.radioPossuiCarroSim.CheckedChanged += new System.EventHandler(this.radioPossuiCarroSim_CheckedChanged);
+            this.lblEditarPessoaRenavam.AutoSize = true;
+            this.lblEditarPessoaRenavam.Location = new System.Drawing.Point(211, 58);
+            this.lblEditarPessoaRenavam.Name = "lblEditarPessoaRenavam";
+            this.lblEditarPessoaRenavam.Size = new System.Drawing.Size(53, 13);
+            this.lblEditarPessoaRenavam.TabIndex = 17;
+            this.lblEditarPessoaRenavam.Text = "Renavam";
             // 
             // radioPossuiCarroNao
             // 
@@ -199,6 +172,60 @@
             this.radioPossuiCarroNao.UseVisualStyleBackColor = true;
             this.radioPossuiCarroNao.CheckedChanged += new System.EventHandler(this.radioPossuiCarroNao_CheckedChanged);
             // 
+            // radioPossuiCarroSim
+            // 
+            this.radioPossuiCarroSim.AutoSize = true;
+            this.radioPossuiCarroSim.Location = new System.Drawing.Point(270, 24);
+            this.radioPossuiCarroSim.Name = "radioPossuiCarroSim";
+            this.radioPossuiCarroSim.Size = new System.Drawing.Size(42, 17);
+            this.radioPossuiCarroSim.TabIndex = 14;
+            this.radioPossuiCarroSim.TabStop = true;
+            this.radioPossuiCarroSim.Text = "Sim";
+            this.radioPossuiCarroSim.UseVisualStyleBackColor = true;
+            this.radioPossuiCarroSim.CheckedChanged += new System.EventHandler(this.radioPossuiCarroSim_CheckedChanged);
+            // 
+            // lblPossuiCarro
+            // 
+            this.lblPossuiCarro.AutoSize = true;
+            this.lblPossuiCarro.Location = new System.Drawing.Point(199, 26);
+            this.lblPossuiCarro.Name = "lblPossuiCarro";
+            this.lblPossuiCarro.Size = new System.Drawing.Size(65, 13);
+            this.lblPossuiCarro.TabIndex = 11;
+            this.lblPossuiCarro.Text = "Possui carro";
+            // 
+            // txtEditarPessoaNome
+            // 
+            this.txtEditarPessoaNome.Location = new System.Drawing.Point(47, 55);
+            this.txtEditarPessoaNome.Name = "txtEditarPessoaNome";
+            this.txtEditarPessoaNome.Size = new System.Drawing.Size(146, 20);
+            this.txtEditarPessoaNome.TabIndex = 13;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(6, 58);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.TabIndex = 12;
+            this.lblNome.Text = "Nome";
+            // 
+            // lblCpf
+            // 
+            this.lblCpf.AutoSize = true;
+            this.lblCpf.Location = new System.Drawing.Point(6, 26);
+            this.lblCpf.Name = "lblCpf";
+            this.lblCpf.Size = new System.Drawing.Size(27, 13);
+            this.lblCpf.TabIndex = 11;
+            this.lblCpf.Text = "CPF";
+            // 
+            // maskEditarPessoaCpf
+            // 
+            this.maskEditarPessoaCpf.Location = new System.Drawing.Point(47, 23);
+            this.maskEditarPessoaCpf.Mask = "000.000.000-00";
+            this.maskEditarPessoaCpf.Name = "maskEditarPessoaCpf";
+            this.maskEditarPessoaCpf.Size = new System.Drawing.Size(85, 20);
+            this.maskEditarPessoaCpf.TabIndex = 10;
+            // 
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(287, 78);
@@ -208,32 +235,6 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // lblEditarPessoaRenavam
-            // 
-            this.lblEditarPessoaRenavam.AutoSize = true;
-            this.lblEditarPessoaRenavam.Location = new System.Drawing.Point(211, 58);
-            this.lblEditarPessoaRenavam.Name = "lblEditarPessoaRenavam";
-            this.lblEditarPessoaRenavam.Size = new System.Drawing.Size(53, 13);
-            this.lblEditarPessoaRenavam.TabIndex = 17;
-            this.lblEditarPessoaRenavam.Text = "Renavam";
-            // 
-            // maskEditarPessoaRenavam
-            // 
-            this.maskEditarPessoaRenavam.Location = new System.Drawing.Point(279, 55);
-            this.maskEditarPessoaRenavam.Mask = "00000000-0";
-            this.maskEditarPessoaRenavam.Name = "maskEditarPessoaRenavam";
-            this.maskEditarPessoaRenavam.Size = new System.Drawing.Size(71, 20);
-            this.maskEditarPessoaRenavam.TabIndex = 18;
-            // 
-            // btnSalvarPessoa
-            // 
-            this.btnSalvarPessoa.Location = new System.Drawing.Point(173, 92);
-            this.btnSalvarPessoa.Name = "btnSalvarPessoa";
-            this.btnSalvarPessoa.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvarPessoa.TabIndex = 19;
-            this.btnSalvarPessoa.Text = "Salvar";
-            this.btnSalvarPessoa.UseVisualStyleBackColor = true;
             // 
             // gBoxEditarCarro
             // 
@@ -248,6 +249,31 @@
             this.gBoxEditarCarro.TabIndex = 17;
             this.gBoxEditarCarro.TabStop = false;
             this.gBoxEditarCarro.Text = "Carro";
+            // 
+            // btnSalvarCarro
+            // 
+            this.btnSalvarCarro.Location = new System.Drawing.Point(122, 85);
+            this.btnSalvarCarro.Name = "btnSalvarCarro";
+            this.btnSalvarCarro.Size = new System.Drawing.Size(75, 23);
+            this.btnSalvarCarro.TabIndex = 23;
+            this.btnSalvarCarro.Text = "Salvar";
+            this.btnSalvarCarro.UseVisualStyleBackColor = true;
+            // 
+            // txtEditarCarroModelo
+            // 
+            this.txtEditarCarroModelo.Location = new System.Drawing.Point(73, 57);
+            this.txtEditarCarroModelo.Name = "txtEditarCarroModelo";
+            this.txtEditarCarroModelo.Size = new System.Drawing.Size(209, 20);
+            this.txtEditarCarroModelo.TabIndex = 22;
+            // 
+            // lblEditarCarroModelo
+            // 
+            this.lblEditarCarroModelo.AutoSize = true;
+            this.lblEditarCarroModelo.Location = new System.Drawing.Point(6, 60);
+            this.lblEditarCarroModelo.Name = "lblEditarCarroModelo";
+            this.lblEditarCarroModelo.Size = new System.Drawing.Size(42, 13);
+            this.lblEditarCarroModelo.TabIndex = 21;
+            this.lblEditarCarroModelo.Text = "Modelo";
             // 
             // maskEditarCarroRenavam
             // 
@@ -266,36 +292,22 @@
             this.lblEditarCarroRenavam.TabIndex = 19;
             this.lblEditarCarroRenavam.Text = "Renavam";
             // 
-            // lblEditarCarroModelo
+            // btnCancelar
             // 
-            this.lblEditarCarroModelo.AutoSize = true;
-            this.lblEditarCarroModelo.Location = new System.Drawing.Point(6, 60);
-            this.lblEditarCarroModelo.Name = "lblEditarCarroModelo";
-            this.lblEditarCarroModelo.Size = new System.Drawing.Size(42, 13);
-            this.lblEditarCarroModelo.TabIndex = 21;
-            this.lblEditarCarroModelo.Text = "Modelo";
-            // 
-            // txtEditarCarroModelo
-            // 
-            this.txtEditarCarroModelo.Location = new System.Drawing.Point(73, 57);
-            this.txtEditarCarroModelo.Name = "txtEditarCarroModelo";
-            this.txtEditarCarroModelo.Size = new System.Drawing.Size(209, 20);
-            this.txtEditarCarroModelo.TabIndex = 22;
-            // 
-            // btnSalvarCarro
-            // 
-            this.btnSalvarCarro.Location = new System.Drawing.Point(122, 85);
-            this.btnSalvarCarro.Name = "btnSalvarCarro";
-            this.btnSalvarCarro.Size = new System.Drawing.Size(75, 23);
-            this.btnSalvarCarro.TabIndex = 23;
-            this.btnSalvarCarro.Text = "Salvar";
-            this.btnSalvarCarro.UseVisualStyleBackColor = true;
+            this.btnCancelar.Location = new System.Drawing.Point(207, 268);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 18;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // Editar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(460, 312);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.gBoxEditarCarro);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.gBoxEditarPessoa);
@@ -342,5 +354,6 @@
         private System.Windows.Forms.TextBox txtEditarCarroModelo;
         private System.Windows.Forms.Label lblEditarCarroModelo;
         private System.Windows.Forms.Button btnSalvarCarro;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

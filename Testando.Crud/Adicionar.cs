@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,8 @@ namespace Testando.Crud
         {
             InitializeComponent();
             gBoxPossuiCarroPessoa.Visible = false;
+
+            radioBtnCarroNao.Checked = true;
         }
 
         private void radioBtnCarro_CheckedChanged(object sender, EventArgs e)
@@ -46,14 +49,37 @@ namespace Testando.Crud
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if(radioBtnCarro.Checked == true)
+            if (radioBtnPessoa.Checked == true)
             {
-                MessageBox.Show("Carro selecionado");
+                char possuiCarro = 'n';
+                if (radioBtnCarroSim.Checked == true)
+                {
+                    possuiCarro = 's';
+                    AddPessoa addPessoa = new AddPessoa(maskCpfPessoa.Text, txtNomePessoa.Text, possuiCarro, maskPessoaCarroRenavam.Text);
+                }
+                else
+                {
+                    AddPessoa addPessoa = new AddPessoa(maskCpfPessoa.Text, txtNomePessoa.Text, possuiCarro, "");
+                }
+                
+
+                txtNomePessoa.Text = "";
+                maskCpfPessoa.Text = "";
+                radioBtnCarroNao.Checked = true;
             }
-            else if(radioBtnPessoa.Checked == true)
+            else if (radioBtnCarro.Checked == true)
             {
-                MessageBox.Show("Pessoa selecionada");
+                AddCarro adicionarCarro = new AddCarro(txtModelo.Text, maskRenavamCarro.Text);
+
+                txtModelo.Text = "";
+                maskRenavamCarro.Text = "";
             }
+
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

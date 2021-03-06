@@ -35,6 +35,7 @@
             this.maskExcluirCpf = new System.Windows.Forms.MaskedTextBox();
             this.maskExcluirRenavam = new System.Windows.Forms.MaskedTextBox();
             this.btnExcluir = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // radioBtnCarro
@@ -64,7 +65,7 @@
             // lblExcluirCpf
             // 
             this.lblExcluirCpf.AutoSize = true;
-            this.lblExcluirCpf.Location = new System.Drawing.Point(121, 115);
+            this.lblExcluirCpf.Location = new System.Drawing.Point(67, 115);
             this.lblExcluirCpf.Name = "lblExcluirCpf";
             this.lblExcluirCpf.Size = new System.Drawing.Size(27, 13);
             this.lblExcluirCpf.TabIndex = 6;
@@ -73,7 +74,7 @@
             // lblExcluirRenavam
             // 
             this.lblExcluirRenavam.AutoSize = true;
-            this.lblExcluirRenavam.Location = new System.Drawing.Point(95, 115);
+            this.lblExcluirRenavam.Location = new System.Drawing.Point(41, 115);
             this.lblExcluirRenavam.Name = "lblExcluirRenavam";
             this.lblExcluirRenavam.Size = new System.Drawing.Size(53, 13);
             this.lblExcluirRenavam.TabIndex = 7;
@@ -81,7 +82,7 @@
             // 
             // maskExcluirCpf
             // 
-            this.maskExcluirCpf.Location = new System.Drawing.Point(195, 112);
+            this.maskExcluirCpf.Location = new System.Drawing.Point(141, 112);
             this.maskExcluirCpf.Mask = "000.000.000-00";
             this.maskExcluirCpf.Name = "maskExcluirCpf";
             this.maskExcluirCpf.Size = new System.Drawing.Size(85, 20);
@@ -89,15 +90,15 @@
             // 
             // maskExcluirRenavam
             // 
-            this.maskExcluirRenavam.Location = new System.Drawing.Point(195, 112);
-            this.maskExcluirRenavam.Mask = "00000000-0";
+            this.maskExcluirRenavam.Location = new System.Drawing.Point(141, 112);
+            this.maskExcluirRenavam.Mask = "0000000-0";
             this.maskExcluirRenavam.Name = "maskExcluirRenavam";
             this.maskExcluirRenavam.Size = new System.Drawing.Size(71, 20);
             this.maskExcluirRenavam.TabIndex = 19;
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(149, 207);
+            this.btnExcluir.Location = new System.Drawing.Point(275, 110);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(75, 23);
             this.btnExcluir.TabIndex = 20;
@@ -105,11 +106,22 @@
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(207, 268);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // Excluir
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 312);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.maskExcluirRenavam);
             this.Controls.Add(this.maskExcluirCpf);
@@ -133,5 +145,6 @@
         private System.Windows.Forms.MaskedTextBox maskExcluirCpf;
         private System.Windows.Forms.MaskedTextBox maskExcluirRenavam;
         private System.Windows.Forms.Button btnExcluir;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }
