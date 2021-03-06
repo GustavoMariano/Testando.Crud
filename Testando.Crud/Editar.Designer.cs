@@ -127,7 +127,7 @@
             this.gBoxEditarPessoa.Controls.Add(this.lblNome);
             this.gBoxEditarPessoa.Controls.Add(this.lblCpf);
             this.gBoxEditarPessoa.Controls.Add(this.maskEditarPessoaCpf);
-            this.gBoxEditarPessoa.Location = new System.Drawing.Point(20, 126);
+            this.gBoxEditarPessoa.Location = new System.Drawing.Point(28, 107);
             this.gBoxEditarPessoa.Name = "gBoxEditarPessoa";
             this.gBoxEditarPessoa.Size = new System.Drawing.Size(420, 131);
             this.gBoxEditarPessoa.TabIndex = 10;
@@ -142,6 +142,7 @@
             this.btnSalvarPessoa.TabIndex = 19;
             this.btnSalvarPessoa.Text = "Salvar";
             this.btnSalvarPessoa.UseVisualStyleBackColor = true;
+            this.btnSalvarPessoa.Click += new System.EventHandler(this.btnSalvarPessoa_Click);
             // 
             // maskEditarPessoaRenavam
             // 
@@ -243,7 +244,7 @@
             this.gBoxEditarCarro.Controls.Add(this.lblEditarCarroModelo);
             this.gBoxEditarCarro.Controls.Add(this.maskEditarCarroRenavam);
             this.gBoxEditarCarro.Controls.Add(this.lblEditarCarroRenavam);
-            this.gBoxEditarCarro.Location = new System.Drawing.Point(59, 126);
+            this.gBoxEditarCarro.Location = new System.Drawing.Point(85, 104);
             this.gBoxEditarCarro.Name = "gBoxEditarCarro";
             this.gBoxEditarCarro.Size = new System.Drawing.Size(328, 113);
             this.gBoxEditarCarro.TabIndex = 17;
@@ -306,7 +307,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(460, 312);
+            this.ClientSize = new System.Drawing.Size(873, 467);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.gBoxEditarCarro);
             this.Controls.Add(this.btnBuscar);

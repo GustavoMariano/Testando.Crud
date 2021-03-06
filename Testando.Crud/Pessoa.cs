@@ -40,4 +40,23 @@ namespace Testando.Crud
             }
         }
     }
+
+    public class UpdatePessoa
+    {
+        Db db = new Db();
+        SqlCommand cmd = new SqlCommand();
+        public String mensagem = "";
+
+        public UpdatePessoa(String cpfInicial, String cpf, String nome, char carro, String carrorenavam)
+        {
+            cmd.CommandText = "update Pessoa SET Cpf = @Cpf, Nome = @Nome, Carro = Carro, CarroRenavam = @CarroRenavam Where Cpf = @CpfInicial";
+
+            cmd.Parameters.AddWithValue("CpfInicial", cpfInicial);
+            cmd.Parameters.AddWithValue("@Cpf", cpf);
+            cmd.Parameters.AddWithValue("@Nome", nome);
+            cmd.Parameters.AddWithValue("@Carro", carro);
+            cmd.Parameters.AddWithValue("@CarroRenavam", carrorenavam);
+        }
+    }
+    
 }

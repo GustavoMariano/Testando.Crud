@@ -13,28 +13,22 @@ namespace Testando.Crud
 {
     public partial class Editar : Form
     {
+        public string cpfInicial, renavamInicial;
         public Editar()
         {
             InitializeComponent();
             radioPossuiCarroNao.Checked = true;
 
-            gBoxEditarPessoa.Visible = false;
+            gBoxEditarPessoa.Visible = true;
             gBoxEditarCarro.Visible = false;
 
-            if (radioBtnPessoa.Checked == true)
-            {
-                gBoxEditarCarro.Visible = false;
-                gBoxEditarPessoa.Visible = true;
-            }
-            else if (radioBtnCarro.Checked == true)
-            {
-                gBoxEditarPessoa.Visible = false;
-                gBoxEditarCarro.Visible = true;
-            }
         }
 
         private void radioBtnPessoa_CheckedChanged(object sender, EventArgs e)
         {
+            gBoxEditarCarro.Visible = false;
+            gBoxEditarPessoa.Visible = true;
+
             lblBuscarRenavam.Visible = false;
             maskBuscarRenavam.Visible = false;
 
@@ -44,6 +38,9 @@ namespace Testando.Crud
 
         private void radioBtnCarro_CheckedChanged(object sender, EventArgs e)
         {
+            gBoxEditarPessoa.Visible = false;
+            gBoxEditarCarro.Visible = true;            
+
             lblBuscarCpf.Visible = false;
             maskBuscarCpf.Visible = false;
 
@@ -65,8 +62,14 @@ namespace Testando.Crud
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
-            var renavam = maskBuscarRenavam.Text.Replace(" ", "").Replace("-", "").Replace("(", "").Replace(")", "");
+            if(radioBtnCarro.Checked == true)
+            {
+                renavamInicial = maskBuscarRenavam.Text;
+            }
+            else if(radioBtnPessoa.Checked == true)
+            {
+                cpfInicial = maskBuscarCpf.Text;
+            }           
 
         }
 
@@ -75,6 +78,9 @@ namespace Testando.Crud
             this.Dispose();
         }
 
+        private void btnSalvarPessoa_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }
