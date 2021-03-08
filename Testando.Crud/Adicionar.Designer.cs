@@ -159,7 +159,7 @@
             // maskPessoaCarroRenavam
             // 
             this.maskPessoaCarroRenavam.Location = new System.Drawing.Point(147, 27);
-            this.maskPessoaCarroRenavam.Mask = "0000000-0";
+            this.maskPessoaCarroRenavam.Mask = "00000000-0";
             this.maskPessoaCarroRenavam.Name = "maskPessoaCarroRenavam";
             this.maskPessoaCarroRenavam.Size = new System.Drawing.Size(67, 20);
             this.maskPessoaCarroRenavam.TabIndex = 13;
@@ -222,7 +222,7 @@
             // maskRenavamCarro
             // 
             this.maskRenavamCarro.Location = new System.Drawing.Point(63, 55);
-            this.maskRenavamCarro.Mask = "0000000-0";
+            this.maskRenavamCarro.Mask = "00000000-0";
             this.maskRenavamCarro.Name = "maskRenavamCarro";
             this.maskRenavamCarro.Size = new System.Drawing.Size(67, 20);
             this.maskRenavamCarro.TabIndex = 12;

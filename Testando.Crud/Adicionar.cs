@@ -48,20 +48,27 @@ namespace Testando.Crud
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
-        {
+        {           
+
             if (radioBtnPessoa.Checked == true)
             {
-                char possuiCarro = 'n';
+                Pessoa pessoaNew = new Pessoa();
+                pessoaNew.Cpf = maskCpfPessoa.Text;
+                pessoaNew.Nome = txtNomePessoa.Text;
+                pessoaNew.CarroRenavam = maskPessoaCarroRenavam.Text;
+
+
                 if (radioBtnCarroSim.Checked == true)
                 {
-                    possuiCarro = 's';
-                    AddPessoa addPessoa = new AddPessoa(maskCpfPessoa.Text, txtNomePessoa.Text, possuiCarro, maskPessoaCarroRenavam.Text);
+                    pessoaNew.AddPessoa(pessoaNew.Cpf, pessoaNew.Nome, 's', pessoaNew.CarroRenavam );
+                    
                 }
                 else
                 {
-                    AddPessoa addPessoa = new AddPessoa(maskCpfPessoa.Text, txtNomePessoa.Text, possuiCarro, "");
+                    pessoaNew.AddPessoa(pessoaNew.Cpf, pessoaNew.Nome, 'n', "");
                 }
                 
+                //Limpa campos
 
                 txtNomePessoa.Text = "";
                 maskCpfPessoa.Text = "";
@@ -69,7 +76,11 @@ namespace Testando.Crud
             }
             else if (radioBtnCarro.Checked == true)
             {
-                AddCarro adicionarCarro = new AddCarro(txtModelo.Text, maskRenavamCarro.Text);
+                Carro carroNew = new Carro();
+                carroNew.Renavam = maskRenavamCarro.Text;
+                carroNew.Modelo = txtModelo.Text;
+
+                carroNew.AddCarro(carroNew.Modelo, carroNew.Renavam);
 
                 txtModelo.Text = "";
                 maskRenavamCarro.Text = "";

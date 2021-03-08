@@ -84,7 +84,7 @@
             // maskBuscarRenavam
             // 
             this.maskBuscarRenavam.Location = new System.Drawing.Point(143, 76);
-            this.maskBuscarRenavam.Mask = "0000000-0";
+            this.maskBuscarRenavam.Mask = "00000000-0";
             this.maskBuscarRenavam.Name = "maskBuscarRenavam";
             this.maskBuscarRenavam.Size = new System.Drawing.Size(71, 20);
             this.maskBuscarRenavam.TabIndex = 5;

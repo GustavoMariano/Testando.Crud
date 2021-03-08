@@ -84,7 +84,7 @@
             // maskBuscarRenavam
             // 
             this.maskBuscarRenavam.Location = new System.Drawing.Point(155, 78);
-            this.maskBuscarRenavam.Mask = "0000000-0";
+            this.maskBuscarRenavam.Mask = "00000000-0";
             this.maskBuscarRenavam.Name = "maskBuscarRenavam";
             this.maskBuscarRenavam.Size = new System.Drawing.Size(71, 20);
             this.maskBuscarRenavam.TabIndex = 7;
@@ -109,7 +109,7 @@
             // 
             // maskBuscarCpf
             // 
-            this.maskBuscarCpf.Location = new System.Drawing.Point(155, 78);
+            this.maskBuscarCpf.Location = new System.Drawing.Point(145, 78);
             this.maskBuscarCpf.Mask = "000.000.000-00";
             this.maskBuscarCpf.Name = "maskBuscarCpf";
             this.maskBuscarCpf.Size = new System.Drawing.Size(85, 20);

@@ -80,18 +80,30 @@ namespace Testando.Crud
 
         private void btnSalvarCarro_Click(object sender, EventArgs e)
         {
-            UpdateCarro updateCarro = new UpdateCarro(txtEditarCarroModelo.Text, maskEditarCarroRenavam.Text, maskBuscarRenavam.Text);
+            Carro CarroUpdate = new Carro();
+            CarroUpdate.Renavam = maskEditarCarroRenavam.Text;
+            CarroUpdate.Modelo = txtEditarCarroModelo.Text;
+
+            CarroUpdate.UpdateCarro(CarroUpdate.Modelo, CarroUpdate.Renavam, maskBuscarRenavam.Text);
         }
 
         private void btnSalvarPessoa_Click(object sender, EventArgs e)
         {
+            Pessoa atualizaPessoa = new Pessoa();
+            {
+                atualizaPessoa.Cpf = maskEditarPessoaCpf.Text;
+                atualizaPessoa.Nome = txtEditarPessoaNome.Text;
+                atualizaPessoa.CarroRenavam = maskEditarPessoaRenavam.Text;                
+
+            }
+
             if (radioPossuiCarroSim.Checked == true)
             {
-                UpdatePessoa updatePessoa = new UpdatePessoa(maskBuscarCpf.Text, maskEditarPessoaCpf.Text, txtEditarPessoaNome.Text, 's',maskEditarPessoaRenavam.Text);
+                atualizaPessoa.UpdatePessoa(maskBuscarCpf.Text, atualizaPessoa.Cpf, atualizaPessoa.Nome, 's', atualizaPessoa.CarroRenavam);
             }
             else if (radioPossuiCarroNao.Checked == true)
             {
-                UpdatePessoa updatePessoa = new UpdatePessoa(maskBuscarCpf.Text, maskEditarPessoaCpf.Text, txtEditarPessoaNome.Text, 'n', "");
+                atualizaPessoa.UpdatePessoa(maskBuscarCpf.Text, atualizaPessoa.Cpf, atualizaPessoa.Nome, 'n', "");
             }
             
         }

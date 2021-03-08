@@ -54,7 +54,20 @@ namespace Testando.Crud
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            ProcuraCarro procuraCarro = new ProcuraCarro(maskBuscarRenavam.Text);
+            if(radioBtnPessoa.Checked == true)
+            {
+                Pessoa buscaPessoa = new Pessoa();
+                buscaPessoa.Cpf = maskBuscarCpf.Text;
+
+                buscaPessoa.ProcuraPessoa(buscaPessoa.Cpf);
+            }
+            else if(radioBtnCarro.Checked == true)
+            {
+                Carro selectCarro = new Carro();
+                selectCarro.Renavam = maskBuscarRenavam.Text;
+
+                selectCarro.ProcuraCarro(selectCarro.Renavam);
+            }            
         }
 
 

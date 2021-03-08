@@ -91,7 +91,7 @@
             // maskExcluirRenavam
             // 
             this.maskExcluirRenavam.Location = new System.Drawing.Point(141, 112);
-            this.maskExcluirRenavam.Mask = "0000000-0";
+            this.maskExcluirRenavam.Mask = "00000000-0";
             this.maskExcluirRenavam.Name = "maskExcluirRenavam";
             this.maskExcluirRenavam.Size = new System.Drawing.Size(71, 20);
             this.maskExcluirRenavam.TabIndex = 19;

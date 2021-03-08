@@ -8,16 +8,19 @@ using System.Windows.Forms;
 
 namespace Testando.Crud
 {
-    public class AddCarro
+    public class Carro
     {
+        public string Modelo { get; set; }
+        public string Renavam { get; set; }
+
         Db db = new Db();
         public SqlCommand cmd = new SqlCommand();
         public String mensagem = "";
 
 
-        public AddCarro(String modelo, String renavam)
+        public void AddCarro(String modelo, String renavam)
         {
-            cmd.CommandText = "insert into Carro (Renavam, Modelo) VALUES (@Renavam, @Modelo)";
+        cmd.CommandText = "insert into Carro (Renavam, Modelo) VALUES (@Renavam, @Modelo)";
 
             cmd.Parameters.AddWithValue("@Renavam", renavam);
             cmd.Parameters.AddWithValue("@Modelo", modelo);
@@ -38,20 +41,76 @@ namespace Testando.Crud
                 throw;
             }
         }
-    }
 
-    public class UpdateCarro
-    {
-        Db db = new Db();
-        SqlCommand cmd = new SqlCommand();
-        public String mensagem = "";
-
-        public UpdateCarro(String modelo, String renavam, String RenavamInicial)
+        public void UpdateCarro(String modelo, String renavam, String RenavamInicial)
         {
             cmd.CommandText = "update Carro SET Modelo = @Modelo, Renavam = @Renavam Where Renavam = @RenavamInicial";
 
             cmd.Parameters.AddWithValue("@RenavamInicial", RenavamInicial);
             cmd.Parameters.AddWithValue("@Modelo", modelo);
+            cmd.Parameters.AddWithValue("@Renavam", renavam);
+
+            try
+            {
+                cmd.Connection = db.conectar(); //Conectando com o banco
+
+                cmd.ExecuteNonQuery(); //Executa o comando
+
+                db.desconectar(); //Desconecta do banco
+
+                this.mensagem = "Editado com sucesso!!"; //Mensagem de sucesso
+            }
+            catch (SqlException e)
+            {
+                this.mensagem = "Erro ao se conectar com o banco de dados" + e;
+                throw;
+            }
+
+        }
+
+        public Carro ProcuraCarro(String renavam)
+        {
+            {
+                cmd.CommandText = @"SELECT * FROM Carro WHERE Renavam=@Renavam";
+
+                cmd.Parameters.AddWithValue("@Renavam", renavam);
+
+                try
+                {
+                    cmd.Connection = db.conectar(); //Conectando com o banco                               
+
+                    SqlDataReader dbResult = cmd.ExecuteReader();   //Executa o comando    
+
+                    return ResultadoProcuraCarro(dbResult);
+                }
+                catch (SqlException e)
+                {
+                    this.mensagem = "Erro ao se conectar com o banco de dados" + e;
+                    throw;
+                }
+            }
+        }
+
+
+        private Carro ResultadoProcuraCarro(SqlDataReader dataReader)
+        {
+            Carro car = new Carro();
+            int index = 0;
+
+            if (dataReader.Read())
+            {
+                car.Renavam = dataReader.GetString(index++);
+                car.Modelo = dataReader.GetString(index++);
+            }
+
+            return car;
+        }
+
+        public void DeletaCarro(String renavam)
+        {
+
+            cmd.CommandText = "delete from Carro Where Renavam=@renavam";
+
             cmd.Parameters.AddWithValue("@Renavam", renavam);
 
             try
@@ -69,72 +128,8 @@ namespace Testando.Crud
                 this.mensagem = "Erro ao se conectar com o banco de dados" + e;
                 throw;
             }
-
         }
-    }
 
-    public class ProcuraCarro
-    {
-         Db db = new Db();
-         public SqlCommand cmd = new SqlCommand();
-         public String mensagem = "";
-         public SqlDataReader dr;
-
-         public ProcuraCarro(String renavam)
-         {
-            cmd.CommandText = "select modelo from carro Where Renavam='@renavam'";
-
-            cmd.Parameters.AddWithValue("@Renavam", renavam);
-
-            try
-            {
-                cmd.Connection = db.conectar(); //Conectando com o banco                               
-
-                dr = cmd.ExecuteReader();    //(System.Data.CommandBehavior.KeyInfo);      //Executa o comando    
-
-                while (dr.Read())
-                {
-                    MessageBox.Show(dr.GetString(0));
-                }
-
-                db.desconectar(); //Desconecta do banco
-            }
-            catch (SqlException e)
-            {
-                this.mensagem = "Erro ao se conectar com o banco de dados" + e;
-                throw;
-            }
-        }
-    }
-
-     public class DeletaCarro
-     {
-         Db db = new Db();
-         SqlCommand cmd = new SqlCommand();
-         public String mensagem = "";
-
-         public DeletaCarro(String renavam)
-         {
-             cmd.CommandText = "delete from Carro Where Renavam=@renavam";
-
-             cmd.Parameters.AddWithValue("@Renavam", renavam);
-
-             try
-             {
-                 cmd.Connection = db.conectar(); //Conectando com o banco
-
-                 cmd.ExecuteNonQuery(); //Executa o comando
-
-                 db.desconectar(); //Desconecta do banco
-
-                 this.mensagem = "Deletado com sucesso!!"; //Mensagem de sucesso
-             }
-             catch (SqlException e)
-             {
-                 this.mensagem = "Erro ao se conectar com o banco de dados" + e;
-                 throw;
-             }
-         }
-
-     } 
+    }    
 }
+
