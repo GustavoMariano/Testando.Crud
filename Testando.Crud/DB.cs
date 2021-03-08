@@ -11,6 +11,7 @@ namespace Testando.Crud
     public class Db
     {
         SqlConnection con = new SqlConnection();
+        public SqlDataReader reader;
 
         public Db()
         {            

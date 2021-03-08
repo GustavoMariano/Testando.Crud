@@ -39,20 +39,21 @@ namespace Testando.Crud
         {
             if(radioBtnCarro.Checked == true)
             {
-                //if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja APAGAR o registro do Carro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
-                //{
+                if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja APAGAR o registro do Carro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
                     //Excluir
                     DeletaCarro deletaCarro = new DeletaCarro(maskExcluirRenavam.Text);
                     //Confirmando exclusão para o usuário
-                //    MessageBox.Show("Registro apagado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Registro apagado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                //}
+                }
             }
             else if(radioBtnPessoa.Checked == true)
             {
                 if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja APAGAR o registro da pessoa?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
                 {
                     //Excluir
+                    DeletaPessoa deletaPessoa = new DeletaPessoa(maskExcluirCpf.Text);
 
                     //Confirmando exclusão para o usuário
                     MessageBox.Show("Registro apagado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);

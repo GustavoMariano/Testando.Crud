@@ -60,7 +60,7 @@
             // radioBtnCarro
             // 
             this.radioBtnCarro.AutoSize = true;
-            this.radioBtnCarro.Location = new System.Drawing.Point(244, 31);
+            this.radioBtnCarro.Location = new System.Drawing.Point(290, 29);
             this.radioBtnCarro.Name = "radioBtnCarro";
             this.radioBtnCarro.Size = new System.Drawing.Size(50, 17);
             this.radioBtnCarro.TabIndex = 3;
@@ -72,7 +72,7 @@
             // radioBtnPessoa
             // 
             this.radioBtnPessoa.AutoSize = true;
-            this.radioBtnPessoa.Location = new System.Drawing.Point(88, 31);
+            this.radioBtnPessoa.Location = new System.Drawing.Point(134, 29);
             this.radioBtnPessoa.Name = "radioBtnPessoa";
             this.radioBtnPessoa.Size = new System.Drawing.Size(60, 17);
             this.radioBtnPessoa.TabIndex = 2;
@@ -84,7 +84,7 @@
             // maskBuscarRenavam
             // 
             this.maskBuscarRenavam.Location = new System.Drawing.Point(155, 78);
-            this.maskBuscarRenavam.Mask = "00000000-0";
+            this.maskBuscarRenavam.Mask = "0000000-0";
             this.maskBuscarRenavam.Name = "maskBuscarRenavam";
             this.maskBuscarRenavam.Size = new System.Drawing.Size(71, 20);
             this.maskBuscarRenavam.TabIndex = 7;
@@ -259,6 +259,7 @@
             this.btnSalvarCarro.TabIndex = 23;
             this.btnSalvarCarro.Text = "Salvar";
             this.btnSalvarCarro.UseVisualStyleBackColor = true;
+            this.btnSalvarCarro.Click += new System.EventHandler(this.btnSalvarCarro_Click);
             // 
             // txtEditarCarroModelo
             // 
@@ -307,7 +308,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(873, 467);
+            this.ClientSize = new System.Drawing.Size(485, 312);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.gBoxEditarCarro);
             this.Controls.Add(this.btnBuscar);

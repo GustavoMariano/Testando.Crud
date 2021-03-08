@@ -8,9 +8,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+
 
 namespace Testando.Crud
 {
+
     public partial class Buscar : Form
     {
         public Buscar()
@@ -30,19 +33,19 @@ namespace Testando.Crud
         }
 
         private void radioBtnCarro_CheckedChanged(object sender, EventArgs e)
-        {            
+        {
             lblBuscarCpf.Visible = false;
             maskBuscarCpf.Visible = false;
 
             lblBuscarRenavam.Visible = true;
             maskBuscarRenavam.Visible = true;
 
-            if(radioBtnCarro.Checked == true)
+            if (radioBtnCarro.Checked == true)
             {
                 lblNome.Visible = false;
-                lblModelo.Visible = true;                
+                lblModelo.Visible = true;
             }
-            else if(radioBtnPessoa.Checked == true)
+            else if (radioBtnPessoa.Checked == true)
             {
                 lblModelo.Visible = false;
                 lblNome.Visible = true;
@@ -51,14 +54,14 @@ namespace Testando.Crud
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-
-            
-            
+            ProcuraCarro procuraCarro = new ProcuraCarro(maskBuscarRenavam.Text);
         }
+
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-        }
-    }
+        }                
+    }    
 }
+

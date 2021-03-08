@@ -78,9 +78,22 @@ namespace Testando.Crud
             this.Dispose();
         }
 
+        private void btnSalvarCarro_Click(object sender, EventArgs e)
+        {
+            UpdateCarro updateCarro = new UpdateCarro(txtEditarCarroModelo.Text, maskEditarCarroRenavam.Text, maskBuscarRenavam.Text);
+        }
+
         private void btnSalvarPessoa_Click(object sender, EventArgs e)
         {
-
+            if (radioPossuiCarroSim.Checked == true)
+            {
+                UpdatePessoa updatePessoa = new UpdatePessoa(maskBuscarCpf.Text, maskEditarPessoaCpf.Text, txtEditarPessoaNome.Text, 's',maskEditarPessoaRenavam.Text);
+            }
+            else if (radioPossuiCarroNao.Checked == true)
+            {
+                UpdatePessoa updatePessoa = new UpdatePessoa(maskBuscarCpf.Text, maskEditarPessoaCpf.Text, txtEditarPessoaNome.Text, 'n', "");
+            }
+            
         }
     }
 }
