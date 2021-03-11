@@ -102,7 +102,7 @@ namespace Testando.Crud
         }
 
 
-        private Pessoa ResultadoProcuraPessoa(SqlDataReader dataReader)
+        public Pessoa ResultadoProcuraPessoa(SqlDataReader dataReader)
         {
             Pessoa person = new Pessoa();
             int index = 0;
@@ -114,7 +114,11 @@ namespace Testando.Crud
                 person.Carro = Convert.ToChar(dataReader.GetString(index++));
                 person.CarroRenavam = dataReader.GetString(index++);
             }
-            
+            this.Nome = person.Nome;
+            this.Cpf = person.Cpf;
+            this.Carro = person.Carro;
+            this.CarroRenavam = person.CarroRenavam;
+
             return person;
         }
 

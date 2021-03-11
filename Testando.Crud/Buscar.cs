@@ -58,15 +58,17 @@ namespace Testando.Crud
             {
                 Pessoa buscaPessoa = new Pessoa();
                 buscaPessoa.Cpf = maskBuscarCpf.Text;
-
                 buscaPessoa.ProcuraPessoa(buscaPessoa.Cpf);
+
+                lblNome.Text = "Nome: " + buscaPessoa.Nome; //Altera label nome
             }
             else if(radioBtnCarro.Checked == true)
             {
                 Carro selectCarro = new Carro();
                 selectCarro.Renavam = maskBuscarRenavam.Text;
-
                 selectCarro.ProcuraCarro(selectCarro.Renavam);
+
+                lblModelo.Text = "Modelo: " + selectCarro.Modelo; //Altera label carro
             }            
         }
 

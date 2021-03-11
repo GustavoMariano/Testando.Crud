@@ -92,7 +92,7 @@ namespace Testando.Crud
         }
 
 
-        private Carro ResultadoProcuraCarro(SqlDataReader dataReader)
+        public Carro ResultadoProcuraCarro(SqlDataReader dataReader)
         {
             Carro car = new Carro();
             int index = 0;
@@ -102,6 +102,8 @@ namespace Testando.Crud
                 car.Renavam = dataReader.GetString(index++);
                 car.Modelo = dataReader.GetString(index++);
             }
+            this.Modelo = car.Modelo;
+            this.Renavam = car.Renavam;
 
             return car;
         }

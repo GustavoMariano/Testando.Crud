@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Testando.Crud
-{
+{  
+
     public partial class Editar : Form
-    {
+    {        
         public string cpfInicial, renavamInicial;
         public Editar()
         {
@@ -64,11 +65,41 @@ namespace Testando.Crud
         {
             if(radioBtnCarro.Checked == true)
             {
-                renavamInicial = maskBuscarRenavam.Text;
+                renavamInicial = maskBuscarRenavam.Text;//Guarda o Renavam inicial buscado
+
+                Carro carro = new Carro(); //Cria instancia carro
+                carro.Renavam = maskBuscarRenavam.Text; //Carrega instancia carro
+
+                carro.ProcuraCarro(carro.Renavam); //Executa metodo de busca
+
+                //Atualiza campos para fazer o update                
+                txtEditarCarroModelo.Text = carro.Modelo;
+                maskEditarCarroRenavam.Text = carro.Renavam;
             }
             else if(radioBtnPessoa.Checked == true)
             {
-                cpfInicial = maskBuscarCpf.Text;
+                cpfInicial = maskBuscarCpf.Text; // Guarda o Cpf inicial buscado
+
+                Pessoa pessoa = new Pessoa(); //Cria instancia pessoa
+                pessoa.Cpf = maskBuscarCpf.Text; //Carrega instancia pessoa
+
+                pessoa.ProcuraPessoa(pessoa.Cpf); //Executa metodo de busca
+
+                //Atualiza campos para fazer o update
+                if(pessoa.Carro == 's')
+                {
+                    txtEditarPessoaNome.Text = pessoa.Nome;
+                    maskEditarPessoaCpf.Text = pessoa.Cpf;
+                    radioPossuiCarroSim.Checked = true;
+                    maskEditarPessoaRenavam.Text = pessoa.CarroRenavam;
+                }
+                else if(pessoa.Carro == 'n')
+                {
+                    txtEditarPessoaNome.Text = pessoa.Nome;
+                    maskEditarPessoaCpf.Text = pessoa.Cpf;
+                    radioPossuiCarroNao.Checked = true;
+                }
+                
             }           
 
         }
@@ -84,7 +115,18 @@ namespace Testando.Crud
             CarroUpdate.Renavam = maskEditarCarroRenavam.Text;
             CarroUpdate.Modelo = txtEditarCarroModelo.Text;
 
-            CarroUpdate.UpdateCarro(CarroUpdate.Modelo, CarroUpdate.Renavam, maskBuscarRenavam.Text);
+            //CarroUpdate.UpdateCarro(CarroUpdate.Modelo, CarroUpdate.Renavam, renavamInicial);
+
+            if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja ATUALIZAR o registro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+            {
+                //Excluir
+                CarroUpdate.UpdateCarro(CarroUpdate.Modelo, CarroUpdate.Renavam, renavamInicial);
+
+                //Confirmando exclusão para o usuário
+                MessageBox.Show("Registro atualizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                maskBuscarCpf.Text = CarroUpdate.Renavam;
+            }
         }
 
         private void btnSalvarPessoa_Click(object sender, EventArgs e)
@@ -99,11 +141,31 @@ namespace Testando.Crud
 
             if (radioPossuiCarroSim.Checked == true)
             {
-                atualizaPessoa.UpdatePessoa(maskBuscarCpf.Text, atualizaPessoa.Cpf, atualizaPessoa.Nome, 's', atualizaPessoa.CarroRenavam);
+                if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja ATUALIZAR o registro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    //Excluir
+                    atualizaPessoa.UpdatePessoa(maskBuscarCpf.Text, atualizaPessoa.Cpf, atualizaPessoa.Nome, 's', atualizaPessoa.CarroRenavam);
+
+                    //Confirmando exclusão para o usuário
+                    MessageBox.Show("Registro atualizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    maskBuscarCpf.Text = atualizaPessoa.Cpf;
+
+                }
+                
             }
             else if (radioPossuiCarroNao.Checked == true)
             {
-                atualizaPessoa.UpdatePessoa(maskBuscarCpf.Text, atualizaPessoa.Cpf, atualizaPessoa.Nome, 'n', "");
+                if (DialogResult.Yes == MessageBox.Show("Tem certeza que deseja ATUALIZAR o registro?", "Confirmação", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2))
+                {
+                    //Excluir
+                    atualizaPessoa.UpdatePessoa(maskBuscarCpf.Text, atualizaPessoa.Cpf, atualizaPessoa.Nome, 'n', "");
+
+                    //Confirmando exclusão para o usuário
+                    MessageBox.Show("Registro atualizado com sucesso", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    maskBuscarCpf.Text = atualizaPessoa.Cpf;
+                }                
             }
             
         }
