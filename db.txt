@@ -1,0 +1,45 @@
+USE [DB.Crud]
+GO
+
+/****** Object:  Table [dbo].[Carro]    Script Date: 14/03/2021 15:29:56 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Carro](
+	[Renavam] [varchar](10) NOT NULL,
+	[Modelo] [varchar](30) NOT NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Renavam] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+
+
+
+USE [DB.Crud]
+GO
+
+/****** Object:  Table [dbo].[Pessoa]    Script Date: 14/03/2021 15:30:39 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[Pessoa](
+	[Cpf] [varchar](14) NOT NULL,
+	[Nome] [varchar](50) NOT NULL,
+	[Carro] [char](1) NOT NULL,
+	[CarroRenavam] [varchar](10) NULL,
+PRIMARY KEY CLUSTERED 
+(
+	[Cpf] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
